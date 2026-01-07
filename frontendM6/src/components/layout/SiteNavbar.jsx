@@ -1,16 +1,29 @@
-import React from "react"
-import { Container, Nav, Navbar, Button } from "react-bootstrap"
+import React, { useEffect, useState } from "react"
+import { Container, Nav, Navbar } from "react-bootstrap"
 import { NavLink, Link } from "react-router-dom"
 import logo from "../../assets/logo.png"
 import "./siteLayout.css"
+import { FaWhatsapp } from "react-icons/fa"
 
 export default function SiteNavbar() {
+
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <Navbar expand="lg" className="site-navbar" fixed="top">
+    <Navbar expand="lg" fixed="top" className={`site-navbar ${scrolled ? "scrolled" : ""}`} >
       <Container>
         <Navbar.Brand as={Link} to="/" className="d-flex align-items-center gap-2">
-          <img src={logo} alt="Logo" className="site-brand-logo" />
-          <span className="site-brand-text">Edilizia & Impianti</span>
+          <img src={logo} alt="Logo" className="site-brand-logo border rounded-4 flag-wave" />
+          {/* <span className="site-brand-text">Edilizia & Impianti</span> */}
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="site-navbar-nav" />
@@ -19,16 +32,20 @@ export default function SiteNavbar() {
             <Nav.Link as={NavLink} to="/" end>Home</Nav.Link>
             <Nav.Link as={NavLink} to="/edilizia">Edilizia</Nav.Link>
             <Nav.Link as={NavLink} to="/impiantistica">Impiantistica</Nav.Link>
-            <Nav.Link as={NavLink} to="/contatti">Contatti</Nav.Link>
+            {/* <Nav.Link as={NavLink} to="/contatti">Contatti</Nav.Link> */}
+            <Nav.Link as={NavLink} to="https://wa.me/393929004078"><FaWhatsapp size={40} color="green" /></Nav.Link>
 
-            <Button
+            {/* <Button
               as="a"
-              href="tel:+393357548581"
+              href="https://wa.me/393421767992"
               variant="dark"
-              className="ms-lg-3"
-            >
-              Chiama ora
-            </Button>
+              className="ms-lg-3 btn-icon"
+              aria-label="Contattaci su WhatsApp"
+              title="WhatsApp"
+            > */}
+            
+            {/* </Button> */}
+
           </Nav>
         </Navbar.Collapse>
       </Container>
