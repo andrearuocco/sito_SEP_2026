@@ -1,7 +1,7 @@
 import React from "react"
 import { Container, Nav, Navbar, Button } from "react-bootstrap"
 import { NavLink, Link } from "react-router-dom"
-import logo from "../../assets/logo.svg"
+import logo from "../../assets/logo.png"
 import "./siteLayout.css"
 
 export default function SiteNavbar() {

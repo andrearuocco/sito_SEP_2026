@@ -1,6 +1,6 @@
 import React from "react"
 import { Container } from "react-bootstrap"
-import "../siteLayout.css"
+import "./siteLayout.css"
 
 export default function SiteFooter() {
   return (

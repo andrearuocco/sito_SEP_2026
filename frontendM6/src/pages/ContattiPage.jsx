@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap"
-import { sendContactMessage } from "../data/api"
+import { sendContactMessage } from "../data/apiForm"
 
 export default function ContattiPage() {
   const [status, setStatus] = useState({ type: "", msg: "" })
