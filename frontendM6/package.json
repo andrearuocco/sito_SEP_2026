@@ -1,5 +1,5 @@
 {
-  "name": "strive-blog-template",
+  "name": "sito-SEP-2026",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,6 +9,7 @@
     "bootstrap": "^5.3.8",
     "draft-js": "^0.11.7",
     "draftjs-to-html": "^0.9.1",
+    "framer-motion": "^12.24.8",
     "jwt-decode": "^4.0.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.10",

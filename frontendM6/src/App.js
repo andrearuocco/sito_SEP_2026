@@ -1,5 +1,5 @@
 import React from "react"
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom"
 
 import SiteNavbar from "./components/layout/SiteNavbar"
 import SiteFooter from "./components/layout/SiteFooter"
@@ -10,17 +10,28 @@ import ImpiantisticaPage from "./pages/ImpiantisticaPage"
 import ContattiPage from "./pages/ContattiPage"
 import NotFound from "./pages/NotFound"
 
-function App() {
+import { AnimatePresence } from "framer-motion"
+
+function AnimatedRoutes() {
+  const location = useLocation()
   return (
-    <Router>
-      <SiteNavbar />
-      <Routes>
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
         <Route path="/" element={<HomePage />} />
         <Route path="/edilizia" element={<EdiliziaPage />} />
         <Route path="/impiantistica" element={<ImpiantisticaPage />} />
         <Route path="/contatti" element={<ContattiPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+    </AnimatePresence>
+  )
+}
+
+function App() {
+  return (
+    <Router>
+      <SiteNavbar />
+      <AnimatedRoutes />
       <SiteFooter />
     </Router>
   )
