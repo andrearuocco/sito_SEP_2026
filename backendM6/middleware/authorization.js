@@ -1,3 +1,4 @@
+/*
 import jwt from 'jsonwebtoken';
 import Author from '../models/authorSchema.js';
 
@@ -30,3 +31,4 @@ export default (req, res, next) => {
         next();
     });
 };
+*/

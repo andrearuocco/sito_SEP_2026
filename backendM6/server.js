@@ -1,46 +1,14 @@
 import express from 'express'
 import 'dotenv/config'
 import mongoose from 'mongoose'
-import authorRoutes from './routes/authorRoutes.js'
-import blogpostRouter from './routes/blogpostRoutes.js'
+
 import cors from 'cors'
-import authRouter from './routes/authRoutes.js'
+
 import morgan from 'morgan'
 import helmet from 'helmet'
 import passport from 'passport'
 import GoogleStrategy from './config/passport.config.js' 
 import authorization from './middleware/authorization.js';
-
-/* 
-import blogPost from './models/blogpostSchema.js'
-import { faker } from '@faker-js/faker';
-const generateblogPost = (num) => {
-    const blogpost = [];
-    for (let i = 0; i < num; i++) {
-        const category = faker.number.int({ min: 1, max: 5 });
-        const title = faker.lorem.sentences(1);
-        const readTime = {
-            "value": faker.number.int({ min: 1, max: 216000 }),
-            "unit": "sec"
-        };
-        const content = faker.lorem.sentences(10);
-        blogpost.push({
-            category,
-            title,
-            readTime,
-            content,
-        });
-    }
-    return blogpost;
-};
-const blogpost = generateblogPost(20);
-blogPost.insertMany(blogpost)
-    .then(docs => console.log(`${docs.length} users have been inserted into the database.`))
-    .catch(err => {
-        console.error(err);
-        console.error(`${err.writeErrors?.length ?? 0} errors occurred during the insertMany operation.`);
-    }); 
-*/
 
 const port = process.env.PORT || 5001
 const host = process.env.HOST || 'http://localhost:5001/'
@@ -53,9 +21,7 @@ server.use(cors()) // cors è un middleware che consente la connessione tra il s
 server.use(morgan("dev")) // middleware che mostra i log delle richieste http
 server.use(helmet()) // modulo che aiuta a proteggere le applicazioni
 
-server.use('/author', authorization, authorRoutes)
-server.use('/blogpost', authorization, blogpostRouter)
-server.use('/api/v1', authRouter) 
+/* server.use('/author', authorization, authorRoutes) */
 
 await mongoose.connect(process.env.MONGODB_URL)
     .then(() => console.log('Connessione al database...'))
