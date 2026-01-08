@@ -8,7 +8,7 @@ export default function SiteFooter() {
       <Container className="py-4">
         <div className="d-flex flex-column flex-md-row justify-content-between gap-3">
           <div>
-            <strong>Edilizia & Impianti</strong>
+            <strong>SEP Società a Responsabilità Limitata</strong>
             <div className="text-muted">Costruzioni • Ristrutturazioni • Impianti • Bonifiche</div>
           </div>
 
