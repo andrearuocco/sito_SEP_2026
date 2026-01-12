@@ -1,12 +1,12 @@
 import React from "react"
 import { Container, Button } from "react-bootstrap"
 import { Link } from "react-router-dom"
-import Reveal from "../ui/Reveal"
+/* import Reveal from "../ui/Reveal" */
 import "./sections.css"
 
 export default function Hero() {
   return (
-    <section className="hero">
+/*     <section className="hero">
       <div className="hero-decor" aria-hidden="true" />
       <Container className="hero-inner">
         <Reveal y={16}>
@@ -30,7 +30,30 @@ export default function Hero() {
           </div>
         </Reveal>
       </Container>
-    </section>
+    </section> */
+    <section className="hero hero-image mm-20">
+  <div className="hero-overlay" aria-hidden="true" />
+
+  <Container className="hero-inner">
+    <h1 className="hero-title">
+      Edilizia e impianti, con cantieri seguiti dall’inizio alla fine.
+    </h1>
+
+    <p className="hero-subtitle">
+      Costruzioni, ristrutturazioni, impianti civili e industriali, manutenzioni.
+    </p>
+
+    <div className="d-flex gap-2 flex-wrap">
+      <Button as={Link} to="/contatti" variant="dark" size="lg" className="btn-soft">
+        Richiedi un preventivo
+      </Button>
+      <Button as={Link} to="/edilizia" variant="outline-light" size="lg" className="btn-soft">
+        Scopri i servizi
+      </Button>
+    </div>
+  </Container>
+</section>
+
   )
 }
 

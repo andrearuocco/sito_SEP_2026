@@ -6,7 +6,7 @@
   overflow: hidden;
 }
 
-.hero-decor {
+/* .hero-decor {
   position: absolute;
   inset: -120px -120px auto auto;
   width: 360px;
@@ -14,11 +14,49 @@
   background: radial-gradient(circle at 30% 30%, rgba(15,17,21,0.10), rgba(15,17,21,0));
   filter: blur(2px);
   transform: translateZ(0);
+} */
+
+.hero {
+  position: relative;
+  /* min-height: 85vh; */
+  display: flex;
+  align-items: center;
+  height: 65vh;
+  /* padding-top: 120px;  navbar fixed */
+  color: #fff;
+  overflow: hidden;
 }
 
-.hero-inner { max-width: 920px; position: relative; }
-.hero-title { font-size: 2.3rem; font-weight: 800; letter-spacing: -0.2px; }
-.hero-subtitle { font-size: 1.1rem; color: #5b6270; margin: 16px 0 24px; }
+/* immagine di sfondo */
+.hero-image {
+  margin-left: 5%;
+  margin-right: 5%;
+  background-image: url("../../assets/fotositouno.jpg"); /* <-- tua immagine */
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
+/* overlay scuro */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  /* background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.65) 100%
+  ); */
+  z-index: 1;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  margin: 18px 0 28px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-inner { max-width: 920px; position: relative; z-index: 2; }
+.hero-title { font-size: 2.6rem; font-weight: 800; }
 
 .section { padding: 60px 0; }
 
@@ -51,5 +89,9 @@
   background: #fff;
   border-top: 1px solid #eef1f4;
   border-bottom: 1px solid #eef1f4;
+}
+
+.mm-20 {
+  margin-top: 8rem;
 }
 
