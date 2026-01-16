@@ -77,7 +77,7 @@ export default function Hero() {
                   civili ed industriali.
                 </motion.p>
 
-                <motion.div variants={item} className="d-flex gap-2 flex-wrap">
+                <motion.div variants={item}>
                   <Button as={Link} to="/edilizia" className="button-nvm-blue">
                     Scopri i servizi
                   </Button>

@@ -14,14 +14,6 @@
   padding: 14px 0;
 }
 
-/* LOGO 
-.site-brand-logo {
-  height: 44px;
-  width: auto;
-  object-fit: contain;
-  border-radius: 0;           
-} */
-
 /* LINK */
 .site-navbar .nav-link {
   color: var(--brand-blue);
