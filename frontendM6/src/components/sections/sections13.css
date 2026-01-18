@@ -12,7 +12,7 @@
   background-image: url("../../assets/hero-home.jpg");
   background-size: cover;
   background-position: center;
-  transform: scale(1.02);
+  /* transform: scale(1.02); */
 }
 
 .hero13-overlay{

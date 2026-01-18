@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react"
 import { Container, Nav, Navbar } from "react-bootstrap"
 import { NavLink, Link, useLocation } from "react-router-dom"
 import { FaWhatsapp } from "react-icons/fa"
-import logo from "../../assets/logo.png" // meglio se con trasparenza
+import logo from "../../assets/logo-transparent.png"
 import "./siteLayout.css"
 
 export default function SiteNavbar() {
@@ -38,7 +38,7 @@ export default function SiteNavbar() {
           <img src={logo} alt="SEP Srl" className="site-brand-logo" />
         </Navbar.Brand>
 
-        <Navbar.Toggle aria-controls="site-navbar-nav" />
+        <Navbar.Toggle className="site-toggler" aria-controls="site-navbar-nav" />
         <Navbar.Collapse id="site-navbar-nav">
           <Nav className="ms-auto align-items-lg-center gap-lg-2 site-nav-links">
             <Nav.Link as={NavLink} to="/" end>
@@ -67,8 +67,8 @@ export default function SiteNavbar() {
               title="WhatsApp"
             >
               <span className="d-inline-flex align-items-center gap-2">
-                <FaWhatsapp size={20} />
-                <span className="d-none d-lg-inline">WhatsApp</span>
+                <FaWhatsapp size={30} />
+                <span className="d-none d-lg-inline style">Contattaci</span>
               </span>
             </Nav.Link>
           </Nav>
