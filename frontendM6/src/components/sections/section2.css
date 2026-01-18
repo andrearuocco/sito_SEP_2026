@@ -1,0 +1,49 @@
+.section2{
+  padding: 44px 0 22px;
+}
+
+.s2-card{
+  position: relative;
+  display:block;
+  border-radius: 18px;
+  overflow:hidden;
+  min-height: 210px;
+  border: 1px solid rgba(15,17,21,0.08);
+  text-decoration:none;
+}
+
+.s2-card img{
+  width:100%;
+  height: 260px;
+  object-fit: cover;
+  display:block;
+  transform: scale(1.01);
+  transition: transform .35s ease;
+}
+
+.s2-card:hover img{
+  transform: scale(1.06);
+}
+
+.s2-label{
+  position:absolute;
+  left: 12px;
+  bottom: 12px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  font-weight: 900;
+  color: rgb(32,48,128);
+}
+
+.s2-text{
+  margin-top: 18px;
+  padding: 14px 0 0;
+}
+
+.s2-title{
+  font-size: 1.35rem;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
