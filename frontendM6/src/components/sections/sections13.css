@@ -1,61 +1,131 @@
 .hero-image {
-  background-image: url("../../assets/ple-hero-home.jpg"); 
+  background-image: url("../../assets/ple-hero-home.jpg");
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
   height: 75vh;
   border-radius: 3px;
   position: relative;
+  overflow: hidden;
 }
 
+/* overlay più “ricco” e fusione con inner */
 .hero-overlay {
   position: absolute;
-  background: 
-    linear-gradient(rgba(247, 167, 167, 0.50) 25%, rgba(247, 167, 167, 0.325) 50%, rgba(247, 167, 167, 0.25) 75%);
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   width: 100%;
   height: 100%;
+
+  background:
+    radial-gradient(circle at 20% 25%, rgba(32,48,128,0.26), transparent 46%),
+    radial-gradient(circle at 85% 75%, rgba(192,16,16,0.22), transparent 52%),
+    linear-gradient(
+      180deg,
+      rgba(15,17,21,0.18) 0%,
+      rgba(247, 167, 167, 0.20) 55%,
+      rgba(247, 167, 167, 0.14) 100%
+    );
 }
 
+/* inner più piccolo e meno “invadente”, animato da destra via CSS (senza cambiare JSX) */
 .hero-inner {
   position: absolute;
   z-index: 2;
   bottom: 2%;
   right: 1%;
-  border-radius: 20px;
-  padding: 0.4rem;
-  background-color: rgba(247, 167, 167);
+
+  /* riduzione impatto 
+  width: min(520px, 92vw); */
+  padding: 0.65rem 0.75rem;
+  border-radius: 18px;
+
+  /* più evidente dell’overlay ma “fuso” */
+  background:
+    linear-gradient(135deg, rgba(247,167,167,0.78), rgba(247,167,167,0.62));
+  border: 1px solid rgba(255,255,255,0.22);
+  backdrop-filter: blur(12px);
+
   color: #fff;
-  /* font-size: 1.5rem; */
+
+  /* ingresso da destra (inner stesso) */
+  animation: heroInnerIn .9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: .18s;
 }
 
-.hero13-kicker{
+@keyframes heroInnerIn{
+  0%{ transform: translateX(110vw); opacity: 0; }
+  100%{ transform: translateX(0); opacity: 1; }
+}
+
+/* font allineato alla navbar: grandezza simile e peso coerente */
+.hero-kicker{
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  /* font-weight: 800; */
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.92);
+  margin-bottom: 0.35rem;
 }
 
-.button-nvm-blue {
+.head-one{
+  font-weight: 900;
+  font-size: clamp(1.15rem, 1.7vw, 1.55rem);
+  line-height: 1.15;
+  margin: 0 0 0.35rem;
+}
+
+.hero-subtitle{
+  font-weight: 600;
+  font-size: 1.02rem;
+  color: rgba(255,255,255,0.92);
+  margin: 0 0 0.55rem;
+}
+
+/* bottone come richiesto (stile tuo) */
+.button-nvm-blue { 
   border: 0.2px solid rgba(247, 167, 167);
   border-radius: 20px !important;
   background-color: #203080;
   color: rgba(247, 167, 167);
-  /* font-size: 1rem;
-  font-weight: 600; */
+  font-weight: 800;
+  padding: 10px 14px;
 }
 
 .button-nvm-blue:hover {
   border: 0.2px solid #203080 !important;
   background-color: #203080 !important;
   color: #fff;
+  filter: brightness(1.04);
 }
 
+/* icona servizi (nuova) più coerente col bottone e con hover come logo navbar */
 .bricks-wobble {
-  background-image: url("../../assets/bricks-wobble.png");
-  height: 52px; /* desktop */
+  height: 40px; /* più “in linea” col bottone */
   width: auto;
   display: block !important;
+  cursor: pointer;
+
+  transition: transform .25s ease, filter .25s ease;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,0.18));
+}
+
+/* hover come logo navbar */
+.bricks-wobble:hover{
+  transform: translateY(-1px) rotate(-1deg);
+  filter: drop-shadow(0 14px 22px rgba(0,0,0,0.22));
+}
+
+/* su mobile: inner un po’ più arioso ma compatto */
+@media (max-width: 991.98px){
+  .hero-inner{
+    width: min(560px, 94vw);
+    padding: 0.7rem 0.8rem;
+    border-radius: 16px;
+    right: 2%;
+    bottom: 2%;
+  }
+
+  .hero-subtitle{
+    font-size: 0.98rem;
+  }
 }
