@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import "./sections13.css"
 import wobble from "../../assets/bricks-wobble.png"
 
-const ease = [0.22, 1, 0.36, 1]
+/* const ease = [0.22, 1, 0.36, 1] */
 
 export default function Hero13() {
   return (
